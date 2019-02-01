@@ -1,7 +1,15 @@
 import React from 'react';
+import './Square.css';
 
 const Square = (props) => {
-  return <div style={{color:props.color, fontWeight:'bold', width:'250px', height:'250px', float:'left', background:props.bg}}>{props.text}</div>;
+
+  const { color, bg } = props;
+
+  return (
+    <div style = {{backgroundColor: bg}} className="square">
+      <h1 style = {{color:color}}> {color} on {bg} </h1>
+    </div>
+  );
 }
 
 export default Square;
