@@ -1,15 +1,54 @@
 import React from 'react';
 import './Square.css';
 
-const Square = (props) => {
+class Square extends React.Component {
+  constructor(props){
+    super(props);
 
-  const { color, bg } = props;
+    this.state = {
+      count:0,
+      isHovering: false,
+    }
+  }
 
-  return (
-    <div style = {{backgroundColor: bg}} className="square">
-      <h1 style = {{color:color}}> {color} on {bg} </h1>
-    </div>
-  );
+  updateCount = () => {
+    this.setState({count: this.state.count + 1})
+  }
+
+  render(){
+    const { color, bg } = this.props;
+
+    const style = (this.state.isHovering)
+    ? {
+      backgroundColor: bg,
+      border: `5px solid ${this.props.color}`
+    } : {
+      backgroundColor:bg,
+      border: `5px solid ${this.props.bg}`
+    };
+
+    return (
+      <div
+        onMouseEnter = {() => this.setState({isHovering: true})}
+        onMouseLeave = {() => this.setState({isHovering: false})}
+        onClick={this.updateCount}
+        style = {style} className="square">
+        <h1 style = {{color:color}}> {color} on {bg} </h1>
+        <h2>Count:{this.state.count}</h2>
+      </div>
+    );
+  }
 }
+
+// const Square = (props) => {
+//
+//   const { color, bg } = props;
+//
+//   return (
+//     <div style = {{backgroundColor: bg}} className="square">
+//       <h1 style = {{color:color}}> {color} on {bg} </h1>
+//     </div>
+//   );
+// }
 
 export default Square;

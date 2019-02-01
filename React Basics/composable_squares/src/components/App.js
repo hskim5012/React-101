@@ -3,7 +3,7 @@ import Square from './Square';
 
 const App = (props) => {
     return (
-        <div style = {{width:'750px'}}>
+        <div style = {{width:'800px'}}>
             <Square color="white" bg="blue"/>
             <Square color="blue" bg="red"/>
             <Square color="green" bg="pink"/>

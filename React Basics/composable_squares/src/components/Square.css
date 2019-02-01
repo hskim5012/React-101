@@ -3,3 +3,7 @@ div {
   height: 250px;
   display: inline-block;
 }
+
+h2 {
+  color: yellow;
+}
