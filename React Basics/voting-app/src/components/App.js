@@ -1,9 +1,10 @@
 import React from 'react';
 import Vote from './Vote';
+import './App.css'
 
 const App = (props) => {
     return (
-        <div>
+        <div class="container">
             <Vote framework="React"/>
             <Vote framework="Vue"/>
             <Vote framework="Angular"/>
